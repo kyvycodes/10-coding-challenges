@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
 * {
   box-sizing: border-box;
@@ -15,11 +15,13 @@ body {
   flex-direction: column;
   font-family: "Poppins", sans-serif;
   margin: 0;
-
 }
 
 .count-container {
   display: flex;
+  /* making container responsive */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 h1 {
