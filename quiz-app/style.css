@@ -7,9 +7,9 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #90d5ec;
+  margin: 0;
   background-image: linear-gradient(315deg, #90d5ec 0%, lavender 100%);
   min-height: 100vh;
-  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,6 +44,10 @@ ul li {
   margin: 1rem 0;
 }
 
+ul li label {
+  cursor: pointer;
+}
+
 button {
   background-color: #cf6a87;
   border: none;
@@ -53,9 +57,14 @@ button {
   font-family: inherit;
   font-size: 1.3rem;
   width: 100%;
-  padding: 1rem;
+  padding: 1.3rem;
 }
 
 button:hover {
   background-color: #941f40;
 }
+
+/* button:focus {
+  background-color: #fff;
+  outline: none;
+} */
