@@ -53,7 +53,6 @@ let currentQuiz = 0;
 
 loadQuiz();
 
-//calls every time button is pressed
 function loadQuiz() {
   const currentQuizData = quizData[currentQuiz];
 
@@ -71,7 +70,6 @@ submitBtn.addEventListener("click", () => {
   if (currentQuiz < quizData.length) {
     loadQuiz();
   } else {
-    //TODO show results
     alert("you have finished the quiz");
   }
 });
