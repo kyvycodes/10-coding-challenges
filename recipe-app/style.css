@@ -32,8 +32,38 @@ header {
 }
 
 header input {
-  background-color: azure;
+  background-color: rgb(215, 230, 230);
   border: none;
   border-radius: 3px;
   padding: 0.5rem 1rem;
+}
+
+header button {
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: rgb(215, 230, 230);
+  border: none;
+  margin-left: 10px;
+  /* border-radius: 25px; */
+}
+
+.fav-container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.fav-meals {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* .fav-meals li {
+} */
+
+.fav-meals li img {
+  border-radius: 50px;
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
 }
