@@ -65,3 +65,9 @@ button {
 button:hover {
   background-color: #941f40;
 }
+
+/* when clicked */
+button:focus {
+  background-color: #3f2028;
+  outline: none;
+}
