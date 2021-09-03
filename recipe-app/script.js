@@ -49,8 +49,34 @@ function addMeal(mealData, random = false) {
 
   const btn = meal.querySelector(".meal-body .fav-button");
   btn.addEventListener("click", () => {
-    btn.classList.toggle("active");
+    if (btn.classList.contains("active")) {
+      removeMealsLocalStorage(mealData.idMeal);
+      btn.classList.remove("active");
+    } else {
+      addMealLocalStorage(mealData.idMeal);
+      btn.classList.add("active");
+    }
   });
 
   meals.appendChild(meal);
+}
+
+function addMealLocalStorage(mealId) {
+  const mealIds = getMealsLocalStorage();
+  localStorage.setItem("mealIds", JSON.stringify([...mealIds, mealId]));
+}
+
+function getMealsLocalStorage() {
+  const mealIds = JSON.parse(localStorage.getItem("mealIds"));
+
+  return mealIds === null ? [] : mealIds;
+}
+
+function removeMealsLocalStorage(mealId) {
+  const mealIds = getMealsLocalStorage();
+
+  localStorage.setItem(
+    "mealIds",
+    JSON.stringify(mealIds.filter((id) => id !== mealId))
+  );
 }
