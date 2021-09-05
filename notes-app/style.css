@@ -8,11 +8,41 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   background-color: #7bdaf3;
-  flex-wrap: ;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .notes {
   background-color: white;
   width: 400px;
   height: 400px;
+  margin: 20px;
+}
+
+.notes .tools {
+  background-color: rgb(35, 245, 158);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notes .tools button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  margin: 0.5;
+}
+
+.notes .main {
+  width: 100%;
+  height: 100%;
+}
+
+.notes textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: inherit;
 }
