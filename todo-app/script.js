@@ -4,16 +4,33 @@ const todosUlElement = document.getElementById("todos");
 
 const todos = JSON.parse(localStorage.getItem("todos"));
 
+if (todos) {
+  todos.forEach((todo) => {
+    addTodo(todo);
+  });
+}
+
 form.addEventListener("submit", (e) => {
   //prevents submit
   e.preventDefault();
+  addTodo();
 });
 
-function addTodo() {
-  const todoText = input.value;
+function addTodo(todo) {
+  let todoText = input.value;
+
+  if (todo) {
+    todoText = todo.text;
+  }
 
   if (todoText) {
     const todoElement = document.createElement("li");
+
+    //TODO - better undestanding
+    if (todo && todo.completed) {
+      todoElement.classList.add("completed");
+    }
+
     todoElement.innerText = todoText;
 
     todosUlElement.appendChild(todoElement);
