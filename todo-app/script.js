@@ -20,11 +20,29 @@ form.addEventListener("submit", (e) => {
 
     todoElement.addEventListener("contextmenu", (e) => {
       e.preventDefault();
-
       todoElement.remove();
     });
 
     //empty value input
     input.value = "";
+
+    updateLS();
   }
 });
+
+function updateLS() {
+  //dom item
+  const todosElement = document.querySelectorAll("li");
+
+  //list of notes
+  const todos = [];
+
+  todosElement.forEach((todoEl) => {
+    todos.push({
+      text: todoEl.innerText,
+      completed: todoEl.classList.contains("completed"),
+    });
+  });
+
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
