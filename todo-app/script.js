@@ -1,26 +1,32 @@
 const form = document.getElementById("form");
 const input = document.getElementById("input");
-const todos = document.getElementById("todos");
+const todosUlElement = document.getElementById("todos");
+
+const todos = JSON.parse(localStorage.getItem("todos"));
 
 form.addEventListener("submit", (e) => {
   //prevents submit
   e.preventDefault();
+});
 
+function addTodo() {
   const todoText = input.value;
 
   if (todoText) {
     const todoElement = document.createElement("li");
     todoElement.innerText = todoText;
 
-    todos.appendChild(todoElement);
+    todosUlElement.appendChild(todoElement);
 
     todoElement.addEventListener("click", () => {
       todoElement.classList.toggle("completed");
+      updateLS();
     });
 
     todoElement.addEventListener("contextmenu", (e) => {
       e.preventDefault();
       todoElement.remove();
+      updateLS();
     });
 
     //empty value input
@@ -28,7 +34,7 @@ form.addEventListener("submit", (e) => {
 
     updateLS();
   }
-});
+}
 
 function updateLS() {
   //dom item
