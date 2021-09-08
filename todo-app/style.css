@@ -29,3 +29,8 @@ form {
   display: block;
   padding: 1rem 2rem;
 }
+
+.input::placeholder {
+  color: rgb(205, 152, 184);
+  opacity: 0.4;
+}
