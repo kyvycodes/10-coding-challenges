@@ -2,8 +2,11 @@ const form = document.getElementById("form");
 const input = document.getElementById("input");
 const todosUlElement = document.getElementById("todos");
 
+//gathers the previous todo objects
 const todos = JSON.parse(localStorage.getItem("todos"));
+// console.log("todos", todos);
 
+//adding a new todo to the local storage
 if (todos) {
   todos.forEach((todo) => {
     addTodo(todo);
@@ -20,13 +23,12 @@ function addTodo(todo) {
   let todoText = input.value;
 
   if (todo) {
-    todoText = todo.text;
+    todoText = todo.text; //sets the text content of the selected elements.
   }
 
   if (todoText) {
     const todoElement = document.createElement("li");
 
-    //TODO - better undestanding
     if (todo && todo.completed) {
       todoElement.classList.add("completed");
     }
