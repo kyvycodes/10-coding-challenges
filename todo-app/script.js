@@ -13,5 +13,18 @@ form.addEventListener("submit", (e) => {
     todoElement.innerText = todoText;
 
     todos.appendChild(todoElement);
+
+    todoElement.addEventListener("click", () => {
+      todoElement.classList.toggle("completed");
+    });
+
+    todoElement.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+
+      todoElement.remove();
+    });
+
+    //empty value input
+    input.value = "";
   }
 });
