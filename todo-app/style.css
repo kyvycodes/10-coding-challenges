@@ -21,6 +21,7 @@ form {
   margin: auto;
   max-width: 100%;
   width: 400px;
+  box-shadow: 0 4px 10px #262525;
 }
 
 .input {
@@ -28,9 +29,23 @@ form {
   width: 100%;
   display: block;
   padding: 1rem 2rem;
+  border: none;
 }
 
 .input::placeholder {
   color: rgb(205, 152, 184);
   opacity: 0.4;
+}
+
+.todos {
+  list-style-type: none;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.todos li {
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  border-top: 1px solid #e5e5e5;
 }

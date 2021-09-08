@@ -7,6 +7,7 @@ form.addEventListener("submit", (e) => {
 
   const todo = input.value;
   const todos = [];
+
   if (todo) {
     todos.push(todo);
   }
