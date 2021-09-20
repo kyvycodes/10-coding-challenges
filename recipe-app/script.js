@@ -1,5 +1,5 @@
 const meals = document.getElementById("meals");
-const favoriteContainer = document.getElementById("fav-meals");
+const favoriteContainer = document.getElementById("favorite-meals");
 
 getRandomMeal();
 fetchFavMeals();
@@ -22,16 +22,14 @@ async function getRandomMealById(id) {
 
   const respData = await resp.json();
   const meal = respData.meals[0];
-  // console.log("by id", respData);
-
   return meal;
 }
 
-// async function getMealsBySearch(factor) {
-//   const meals = await fetch(
-//     "https://www.themealdb.com/api/json/v1/1/search.php?s=" + factor
-//   );
-// }
+async function getMealsBySearch(factor) {
+  const meals = await fetch(
+    "https://www.themealdb.com/api/json/v1/1/search.php?s=" + factor
+  );
+}
 
 //reallocating from html file
 function addMeal(mealData, random = false) {
@@ -91,20 +89,25 @@ function removeMealsLocalStorage(mealId) {
 async function fetchFavMeals() {
   const mealIds = getMealsLocalStorage();
 
+  // let meals = [];
   for (let i = 0; i < mealIds.length; i++) {
     const mealId = mealIds[i];
-    let meal = await getRandomMealById(mealId);
-    console.log("meal", meal);
+    meal = await getRandomMealById(mealId);
+
+    // meals.push(meal);
+    // console.log("meal", meal);
     addMealToFavs(meal);
   }
 }
 
-//reallocating from html file
+// reallocating from html file
 function addMealToFavs(mealData) {
   const favMeal = document.createElement("li");
 
   favMeal.innerHTML = `
-  <img src='${mealData.strMealThumb}' alt='${mealData.strMeal}'>
+    <img
+      src='${mealData.strMealThumb}'
+      alt='${mealData.strMeal}'>
     <span>${mealData.strMeal}</span>
       `;
 
