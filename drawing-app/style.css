@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #ecd1d1;
   font-family: "Poppins", sans-serif;
   margin: 0;
   display: flex;
@@ -15,7 +15,8 @@ body {
 }
 
 canvas {
-  width: 500px;
-  height: 500px;
-  border: 2px solid pink
+  width: 800px;
+  height: 800px;
+  border: 7px solid pink;
+  background-color: #f5f5f5;
 }

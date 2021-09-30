@@ -4,14 +4,25 @@ const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
 let size = 20;
+let isCurrentlyPressed = false;
 
 
 canvas.addEventListener('mousemove', (event) => {
 
-  const x = event.offsetX;
-  const y = event.offsetY;
+  if(isCurrentlyPressed){
+      const x = event.offsetX;
+      const y = event.offsetY;
 
-  drawCircle(x,y)
+      drawCircle(x,y)
+  }
+})
+
+canvas.addEventListener('mouseup', (event) => {
+  isCurrentlyPressed = false
+})
+
+canvas.addEventListener('mousedown', (event) => {
+  isCurrentlyPressed = true
 })
 
 canvas.addEventListener()
@@ -22,11 +33,5 @@ function drawCircle(x,y) {
   ctx.fill()
 }
 
-drawCircle(50, 50)
 
 
-// function draw() {
-//   drawCircle(50, 50)
-
-//   requestAnimationFrame()
-// }
