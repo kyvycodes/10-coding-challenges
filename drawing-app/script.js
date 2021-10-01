@@ -11,24 +11,35 @@ const colorElement = document.getElementById('color')
 let size = 20;
 let isCurrentlyPressed = false;
 let color = 'black';
+let x = undefined;
+let y = undefined
 
 
 canvas.addEventListener('mousemove', (event) => {
 
   if(isCurrentlyPressed){
-      const x = event.offsetX;
-      const y = event.offsetY;
+      const x2 = event.offsetX;
+      const y2 = event.offsetY;
 
-      drawCircle(x,y)
+      drawCircle(x2, y2)
+      drawLine(x, y, x2, y2);
+      x = x2;
+      y = y2;
   }
 })
 
 canvas.addEventListener('mouseup', (event) => {
   isCurrentlyPressed = false
+
+  x = undefined
+  y = undefined
 })
 
 canvas.addEventListener('mousedown', (event) => {
   isCurrentlyPressed = true
+
+  x = event.offsetX;
+  y = event.offsetY;
 })
 
 
@@ -61,6 +72,16 @@ function drawCircle(x,y) {
   ctx.arc(x, y, size, 0, Math.PI * 2)
   ctx.fill()
   ctx.fillStyle = color;
+}
+
+
+function drawLine(x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1)
+  ctx.lineTo(x2, y2)
+  ctx.strokeStyle = color;
+  ctx.lineWidth = size;
+  ctx.stroke()
 }
 
 function updateSizeOnScreen() {
