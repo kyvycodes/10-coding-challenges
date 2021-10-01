@@ -11,6 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: 100vh;;
 }
 
@@ -19,4 +20,18 @@ canvas {
   height: 800px;
   border: 7px solid pink;
   background-color: #f5f5f5;
+}
+
+.toolbox {
+  padding: 1rem;
+  width: 800px;
+  background-color: whitesmoke;
+}
+
+.toolbox button {
+  background-color: rgb(238, 214, 186);
+  padding: 0.25rem;
+  border: none;
+  font-size: 3rem;
+  width: 50px;
 }
