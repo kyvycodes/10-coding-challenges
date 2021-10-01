@@ -41,3 +41,7 @@ canvas {
   align-items: center;
   justify-content: center;
 }
+
+.toolbox > *:last-child {
+  margin-left: auto;
+}

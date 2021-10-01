@@ -7,6 +7,8 @@ const increaseBtn = document.getElementById('increase')
 const decreaseBtn = document.getElementById('decrease')
 const sizeElement = document.getElementById('size')
 const colorElement = document.getElementById('color')
+const clearBtn = document.getElementById('clear')
+
 
 let size = 20;
 let isCurrentlyPressed = false;
@@ -88,3 +90,6 @@ function updateSizeOnScreen() {
   sizeElement.innerText = size
 }
 
+clearBtn.addEventListener('click', () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+})
