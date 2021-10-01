@@ -10,7 +10,7 @@ const colorElement = document.getElementById('color')
 const clearBtn = document.getElementById('clear')
 
 
-let size = 20;
+let size = 25;
 let isCurrentlyPressed = false;
 let color = 'black';
 let x = undefined;
@@ -82,7 +82,7 @@ function drawLine(x1, y1, x2, y2) {
   ctx.moveTo(x1, y1)
   ctx.lineTo(x2, y2)
   ctx.strokeStyle = color;
-  ctx.lineWidth = size;
+  ctx.lineWidth = size * 2;
   ctx.stroke()
 }
 
